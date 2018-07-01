@@ -3,10 +3,10 @@
 int main ()
 {
 	printf("Hello world\n");
-	int i = 0;
-	for (i = 0; i < 5; i++)
-	{
-		printf("here is the loop for = %d\n", i);
-	}
+	int i = 3,j;
+	j = ++i;
+	printf("pre increment operator = %d\n", j);
+	j = i++;
+	printf("post increment operator = %d\n", j);
 	return 0;
 }
