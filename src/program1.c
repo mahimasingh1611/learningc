@@ -8,5 +8,14 @@ int main ()
 	printf("pre increment operator = %d\n", j);
 	j = i++;
 	printf("post increment operator = %d\n", j);
+	if(i%2==0)
+	{
+		printf("even\n");
+	}
+	else
+	{
+		printf("odd\n");
+	}
 	return 0;
+
 }
