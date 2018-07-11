@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 
 // this is a comment!!
 
@@ -23,7 +25,7 @@ int sub(int x,int y)
 	return res;
 }
 
-float div(int x,int y)
+float division(int x,int y)
 {
 	float res=x/y;
 	return res;
@@ -40,7 +42,7 @@ int main ()
 	printf("multiplication=%d\n", mul(i,j));
 	printf("addition=%d\n",add(i,j));
 	printf("subtract=%d\n",sub(i,j));
-	printf("division=%f\n",div(i,j));
+	printf("division=%f\n",division(i,j));
 
 	printf("sizeof(char)=%ld\n", sizeof(char));
 	printf("sizeof(int)=%ld\n", sizeof(int));
@@ -52,6 +54,32 @@ int main ()
 	//printf("sizeof(long long double)=%ld\n", sizeof(long long double));
 	printf("sizeof(long long int)=%ld\n", sizeof(long long int));
 
+	char* command;
+	while (1)
+	{
+		printf("user@user: ");
+		command = (char *) malloc (sizeof(char) * 256);
+		scanf("%s",command);
+		printf("Executing: %s\n", command);
+		if (!strcmp(command,"exit"))
+		{
+			break;
+		}
+		else if (!strcmp(command,"date"))
+		{
+			system(command);
+		}
+		else
+		{
+			int count = 0;
+			for (count = 0; command[count] != '\0'; count++)
+			{
+				//printf("%c\n", command[count]);
+			}
+			printf("You have entered %d characters, which doesn't make sense to me\n", count);
+		}
+		free(command);
+	}
 
 	return 0;
 
